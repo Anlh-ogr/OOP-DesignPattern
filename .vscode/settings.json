@@ -15,15 +15,17 @@
         "map": "cpp",
         "set": "cpp",
         "unordered_map": "cpp",
-        "unordered_set": "cpp"
+        "unordered_set": "cpp",
+        "iosfwd": "cpp"
     },
 
     "C_Cpp.default.cppStandard": "c++20",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "C_Cpp.default.compilerPath": "C:\\mingw64\\bin\\g++.exe",
     "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.default.includePath": [
-        "${workspaceFolder}/**"
+        "${workspaceFolder}/**",
+        "C:\\mingw64\\include"
     ],
 
     "C_Cpp.workspaceParsingPriority": "low",            // giảm lag khi index
