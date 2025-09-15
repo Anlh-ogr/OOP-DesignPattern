@@ -2,60 +2,43 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Build C++ file",
+            "label": "Build current file",
             "type": "shell",
-            "command": "C:\\mingw64\\bin\\g++.exe",
+            "command": "powershell",
             "args": [
-                "-std=c++20",
-                "-O2",
-                "-march=native",
-                "-pipe",
-                "-Wall",
-                "-Wextra",
-                "-Wpedantic",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "group": "build",
-            "problemMatcher": [
-                "$gcc"
+                "-Command",
+                "C:/mingw64/bin/g++.exe -std=c++20 -g -Wall -Wextra -Wpedantic ${file} -o ${fileDirname}/${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "detail": "Build all cpp file (release mode, optimized for O2)"
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compile only the active .cpp file into exe"
         },
         {
-            "label": "Build C++ file and Debug",
+            "label": "Build current folder",
             "type": "shell",
-            "command": "C:\\mingw64\\bin\\g++.exe",
+            "command": "powershell",
             "args": [
-                "-std=c++20",
-                "-g",
-                "-O0",
-                "-march=native",
-                "-pipe",
-                "-Wall",
-                "-Wextra",
-                "-Wpedantic",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}_debug.exe"
-            ],
-            "group": "build",
-            "problemMatcher": [
-                "$gcc"
+                "-Command",
+                "C:/mingw64/bin/g++.exe -std=c++20 -g -Wall -Wextra -Wpedantic (Get-ChildItem -Filter *.cpp | ForEach-Object { $_.FullName }) -o ${fileDirname}/app.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "detail": "Build all cpp file (debug mode, O0 + g)"
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compile all .cpp files in current folder into app.exe"
         },
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file",
-            "command": "C:\\mingw64\\bin\\g++.exe",
+            "label": "C/C++: gcc.exe build active file",
+            "command": "C:\\mingw64\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
