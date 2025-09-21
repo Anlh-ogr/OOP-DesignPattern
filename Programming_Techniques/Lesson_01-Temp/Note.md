@@ -4,7 +4,7 @@
 - Lưu một giá trị của một biến khác trước khi nó bị thay đổi hoặc dùng để tính giá trị tạm thời cần được sử dụng ngay.
 
 ## Ví dụ:
-``` cpp
+``` cpp - đặt biến tạm
     int temp;
     temp = first;
     first = second;

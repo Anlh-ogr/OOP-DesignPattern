@@ -4,7 +4,7 @@
 - Đánh dấu tìm ra trường hợp thỏa mãn tốt nhất trong một tập hợp các giá trị.
 
 ## Ví dụ:
-``` cpp
+``` cpp - đặt lính canh
     int findMax(int arr[], int size) {
         int max = arr[0];
         for (int i = 0; i < size; ++i)
